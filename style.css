@@ -202,8 +202,13 @@
 	padding: 10px 18px;
 	font-weight: bold;
 	display: inline-block;
-	margin: 35px 50px;
+	margin: 10px 10px;
 	border-radius: 5px;
+	}
+	
+	.CV {
+	display: flex;
+	margin-left: 40px;
 	}
 	
 	.intro {
