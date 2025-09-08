@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Images</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="bg-container"> 
+	
+	</div>
+
+  <header>
+
+	<nav>
+		
+			<button class="menu" onclick="document.getElementById('pop up menu').style.display='block'"> 
+			</button>
+			
+			<div id="pop up menu" class="menu-container">
+				<div class="menu-card menu-animation">
+
+					<div class="menu-item">
+							<a href="index.html"> HOME </a> <br>
+							<a href="portofolio.html"> PORTOFOLIO </a> <br>
+							<a href="images.html"> PICTURES </a> <br>
+							<a href="kontak.html"> CONTACT </a> <br>
+					</div>
+					
+					<button class="menu-close" onclick="document.getElementById('pop up menu').style.display='none'" title="close">
+					</button>
+				</div>
+			</div>
+			
+	</nav>
+  </header>
+
+  <!-- Hero Section  -->
+  <section id="hero" class="hero">
+	<div class = "hero-content">
+
+		<div class="images-page">
+			<div class = "images-page-photos">
+				<h1> PHOTOS </h1>
+				<div id="image-track1" data-mouse-down-at="0" data-prev-percentage="0" class="img-card">
+					<img class ="img-photos" src = "./images/photos/1.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/2.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/3.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/4.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/5.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/6.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/7.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/8.jpg" draggable="false">
+					<img class ="img-photos" src = "./images/photos/9.jpg" draggable="false">
+				</div>
+			</div>
+			
+			<div class = "images-page-artwork">
+				<h1> ARTWORK </h1>	
+				<div id="image-track2" data-mouse-down-at="0" data-prev-percentage="0" class="img-card">
+					<img class ="img-photos" src = "./images/artwork/1.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/2.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/3.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/4.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/5.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/6.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/7.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/8.png" draggable="false">
+					<img class ="img-photos" src = "./images/artwork/9.png" draggable="false">
+				</div>
+			</div>
+		</div>
+	</div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

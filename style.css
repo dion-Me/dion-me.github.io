@@ -1,552 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-	* {
-	  box-sizing: border-box;
-	  margin: 0;
-	}
-	
-	body {
-		margin: 0;
-		padding: 0;
-		font-family: Arial, sans-serif;
-	}
-		
-	.hero {
-	position: relative;
-	width: 100%;
-	background-image:url('./image/bg.jpg');
-	}
-	
-	nav {
+body {
+  font-family: Verdana, sans-serif;
+  line-height: 1.8;
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 30px 20px 5px 20px;
+
+}
+
+.bg-container{
+  background-image:url('./images/bg-1.png');
+  background-size:cover;
+  background-position: center;
+}
+
+header {
+
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+section {
+  padding: ;
+}
+
+.hero {
+
+}
+
+.hero-content{
 	display: flex;
-	height: 80px;
-	margin: auto;
-	padding: 5px;
-	align-items: center;
-	justify-content: space-between;
-	}
-	
-	nav ul li {
-	display: inline-block;
-	list-style: none;
-	margin: 10px 20px;
-	}
-	
-	nav ul li a {
-	text-decoration: none;
-	color: #FFFFFF;;
-	font-weight: bold;
-	font-size: 20px;
-	}
-	
-	nav ul li a:hover {
-	color: #fa793e;
-	font-size: 25px;
-	}
+}
 
-	
-	.logo {
-	background-image:url('./image/logo.png');
-	width: 120px;
-	height: 120px;
-	border: none;
-	background-size: 100% 100%;
+.image-profile {
+	width: 600px;
+	display: flex;
+	position: relative;
+	justify-content: flex-end;
+}
+
+.image-profile-1 {
+	position: relative;
+	top: 10px;
+	height: 100%;
+	width: 400px;
+	opacity: 20%;
+}
+
+.image-profile-2 {
+	position:absolute;
+	top: 10px;
+	right: 50px;
+	width: 400px;
+	height: 100%;
+}
+
+.image-profile:hover .image-profile-1{
+	transform: translateX(50px);
+	transition: transform 280ms ease-in-out;
+}
+
+.image-profile:hover .image-profile-2{
+	transform: translateX(-50px);
+	transition: transform 280ms ease-in-out;
+}
+
+.menu{
+	width: 75px;
+	height: 50px;
+	display: flex;
+	margin: 15px;
 	cursor: pointer;
-	margin-top: 20px;
-	display: block;
-	}
-	
-	.menu {
-    width: 75px; 
-	height: 50px; 
-	background: url("./image/menu.png") no-repeat;
+	background: url("./images/menu - Copy.png");
 	background-size: 100% 100%; 
 	border: none;
-	cursor: pointer;
-	margin: 15px;
-	}
+}
 
-	.menu-container {
+.menu-container {
 	display: none;
 	position: fixed;
 	z-index: 1;
+	overflow: auto;
+	width:100%;
+	height:100%;
 	left: 0;
 	top: 0;
-	width: 100%;
+}
+
+.menu-card {
 	height: 100%;
-	overflow: auto;
-	background-color: rgba(0, 0, 0, 0.4);
-	}
-
-	.menu-card {
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	transition: 0.3s;
-	border: 1px solid white;
-	border-radius: 5px;
-	padding: 20px;
-	height:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background-color: white;
-	}
+	transition: background-color 0.3s ease;
+}
 
-	.menu-card:hover{
-	background: rgba(252,252,252,0.75);
-	background: rgba(10,10,10,0.75);
-	}
+.menu-card:hover {
+	background-color: rgba(0,0,0,0.9); /* only background changes */
+}
 
-	.menu-animation {
-	animation: animatezoom 0.6s;
-	}
+.menu-animation {
+	animation: animatezoom 0.5s ease;
+}
 
 	@keyframes animatezoom {
 	from {
-		transform: scale(0.8);
+		transform: scale(0.5);
 	  }
 	to {
 		transform: scale(1);
 	  }
 	}
 
-	.center {
-	  text-align: center ;
-	}
-
-	.right {
-		text-align: right;
-	}
-
-	.menu_close {
-	border: none;
-	display: inline-block;
-	cursor: pointer;
-	background: url("./image/menu_close.png");
-	width: 75px;
-	height: 75px;
-	background-size: cover;
-	}
-
-	.menu-item {
-	padding: 64px;
-	margin-top: 16px;
-	}
-
-
-	.menu-item a {
-	color: #D57221;
-	text-decoration:none;
-	font-size: 50px;
-	letter-spacing: 10px;
-	font-weight; bold;
-	}
-	
-	.menu-item a:hover {
-	background-color: white;
-	}
-	
-	.part1 {
-	display:flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	}
-	
-	.image {
-	height: auto;
-	margin-right: 40px;
-	}
-	
-	.gambar1 {
-	height: 700px;
-	object-fit: cover;
+.menu-card button {
 	position: absolute;
-	transform: translateX(10%);
-	object-position: 0px 50px;
-	opacity: 20%;
-	}
-	
-	.gambar2 {
-	height: 700px;
-	object-fit: cover;
-	object-position: 0px 50px;
-	filter:saturate(1);
-	}
-	
-	.image:hover .gambar1 {
-	transform: translateX(80px);
-	transition: transform 280ms ease-in-out; 
-	}
-	
-	.image:hover .gambar2 {
-	transform: translateX(-20px);
-	transition: transform 300ms ease-in-out; 
-	}
-	
-	.text-warp {
-	padding-left: 50px;
-	}
-	
-	.text-warp h1 {
-	font-size:50px; 
-	color:white;
-	letter-spacing: 5px;
-	text-shadow: 0 0 30px #fa793e,
-				 0 0 20px #fa793e;
-	}
-	
-	.text-warp p {
-	font-size: 25px;
-	}
-	
-	.part1 a {
-	background-color: #fa793e;
-	color: white;
-	padding: 10px 18px;
-	font-weight: bold;
-	display: inline-block;
-	margin: 10px 10px;
-	border-radius: 5px;
-	}
-	
-	.CV {
-	display: flex;
-	margin-left: 40px;
-	}
-	
-	.intro {
-	}
-	
-	.intro p {
-	color: #333333;
-	font-size: 20px;
-	}
-	
-	.intro span {
-	color: #fa793e;
-	}
-	
-	.part3 {
-	text-align: center;
-	padding: 10px;
-	background-color: #FFFFFF;
-	}
-	
-	.portofolio h1 {
-	font-size: 40px;
-	padding-bottom: 25px;
-	padding-top: 25px;
-	color: #ffbc81;
-	}
-	
-	.preview {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	padding: 10px;
-	}
-	
-	.preview-item {
-	overflow: hidden;
-	padding: 40px;
-	}
-	
-	.preview img {
-	max-width: 100%;
-	height: 90%;
-	object-fit:cover;
-	border: 3px solid #A59A94;
-	padding:5px;
-	width:100%;
-	}
-	
-	.preview-item p {
-	padding: 5px;
-	}
-	
-	.preview-item:hover .gambarA {
-	transform: scale(1.25);
-	transition: transform 280ms ease-out 50ms; 
-	overflow: visible;
-	}
-	
-	.preview-item:hover .gambarB {
-	transform: scale(1.25);
-	transition: transform 280ms ease-out 50ms; 
-	overflow: visible;
-	}
-
-	.preview-item:hover .gambarC {
-	transform: scale(1.25);
-	transition: transform 280ms ease-out 50ms; 
-	overflow: visible;
-	}
-	
-	.preview-item:hover .gambarD {
-	transform: scale(1.25);
-	transition: transform 280ms ease-out 50ms; 
-	overflow: visible;
-	}
-	
-	.to-portofolio{
-	display: inline-block;
-	padding: 10px 40px 0px 40px;
-	padding-bottom:0px;
-	background-color: #fa793e;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	margin-bottom: 20px;
-	}
-	
-	.to-portofolio:hover {
-	animation: swing 0.5s;
-	}
-	
-	.to-portofolio a {
-	text-decoration: none;
-	color: white;
-	font-size: 25px;
-	align-items:center;
-	justify-content: center;
-	}
-	
-	.part4 {
-	background-color: #FFBC81;
-	}
-	
-	.footer_{
-	padding-top: 100px;
-	padding-bottom: 10px;
-	}
-	
-	.sosmed {
-	display:flex;
-	justify-content: space-around;
-	font-size: 30px;
-	padding-left: 250px;
-	padding-right: 250px;
-	}
-	
-	.fa {
-	font-size: 40px;
-	color: white;
-	text-decoration: none;
-	}
-	
-	.fa-brands {
-	font-size: 40px;
-	color: white;
-	text-decoration: none;
-	}
-	
-	.fa-brands:hover {
-	opacity:70%;
-	}
-	
-	.copyright {
-	text-align: center;
-	}
-
-	.copyright p {
-	margin-top: 50px;
-	font-size: 20px;
-	}
-	
-	/* animation 
-	
-.animate__animated.animate__backInDown{
---animate-duration: 3s;
+	right: 0;
+	top: 0;
 }
-	*/
 
-	.ahoy {
-	background:url('./image/bg.jpg') no-repeat;
-	background-size: 100% 900px;
-	}
-	.contact-bio {
-	/*background-color: #FFBC81;
-	background-color: white;*/
+.menu-close {
+	width: 70px;
+	height: 70px;
+	margin: 15px;
+	cursor: pointer;
+	background: url("./images/menu_close.png");
+	background-size: 100% 100%; 
+	border: none;
+}
+
+.menu-item {
 	text-align: center;
-	align-items: center;
-	justify-content:center;
-	padding: 0px 25px 15px 25px;
-	}
-	
-	.contact-bio-profile {
-	/*background-color: #FFBC81;
-	background-image:url('./image/bg.jpg');*/
-	padding: 10px 0px 50px 0px;
-	height:auto;
-	}
-	
-	.contact-title {
-	margin: 30px;
-	margin-top: 0px;
-	}
-	
-	.contact-title h1 {
-	font-size: 35px;
-	color: white;
-	}
-	
-	.contact-info {
+}
+
+.menu-item a {
+	text-decoration: none;
+	color: #fa793e;
+	font-size: 40px;
+	letter-spacing: 10px;
+}
+
+.menu-item a:hover{
+	background-color: white;
+}
+
+.text-profile {
+	margin: 50px 0px 0px 30px;
+	padding: 20px;
+}
+
+.text-profile h1 {
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 1.5;
+}
+
+.text-profile h2 {
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.text-profile p {
+	font-size: 12px;
+	font-weight: normal;
+	padding: 10px 0px 10px 0px;
+}
+
+.profile-button {
 	display: flex;
-	height: 350px;
-	width: 100%; 
-	height: auto;
-	justify-content: center;
-	}
-	
-	.contact-image {
-	height:auto;
-	width: 300px;
-	margin: 0px 10px 0px 10px;
-	}
-	
-	.kontak {
+	padding: 5px;
+}
+
+.CV-1 {
+	display: inline-block;
+	color: white;
+	text-decoration:none;
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 5px 15px 5px 15px;
+	background-color: #fa793e;
+	text-align: center;
+	margin-right: 10px;
+	font-size: 15px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.to-Portofolio-button {
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+	border: 2px solid black;
+	border-radius: 10px;
+	background-color: white;
+	padding: 5px 15px 5px 15px;
+	text-align: center;
+	margin-left: 10px;
+	font-size: 15px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.port-title {
+	text-align: center;
+	padding: 0px 0px 20px 0px;
+}
+
+.port-title h1 {
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+.port-title p {
+	padding: 5px;
+	font-size: 15px;
+	font-style: italic;
+}
+
+.port-gallery {
 	width: 100%;
-	height: 100%;
-	object-fit:cover;
-	filter: grayscale(0);
-	} /*the image */
-	
-	.contact-sosmed {
-	display:grid;
 	height: auto;
-	width:auto ; /* for the green sosmed icons, will adjust the width later*/
-	padding: 0px 50px 50px 0px;
-	margin:0px 50px 0px 50px;
-	text-align: left;
-	}
-	
-	.contact-sosmed h1 {
+	display: flex;
+	gap:15px;
+	flex-wrap: wrap;
+}
+
+.gallery-cards {
+	width: 300px;
+	height: 100%;
 	text-align: center;
+	overflow: hidden;
+}
+
+.card-img {
+	width: 100%;
+	height: 500px;
+	object-fit: cover;
+	object-position: center;
+	border: solid black 1px;
+	border-radius: 15px;
+}
+
+.gallery-cards p {
+	font-size: 15px;
+	margin-bottom: 10px;
+}
+
+.app-description {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	margin: 10px;
+	padding: 10px;
+	height: 120px;
+	overflow-y: auto;
+	text-overflow: ellipsis;
+}
+
+.app-description p {
+	font-size: 15px;
+}
+
+.gallery-cards button {
+	height: 40px;
+	display: inline-block;
 	color: white;
-	}
-	
-	.contact-sosmed .faA {
-	color: white;
-	font-size: 30px;
-	}
-	
-	.contact-sosmed snap {
-	font-size: 20px;
-	letter-spacing: 3px;
-	}
-	
-	.contact-bio-story {
+	text-decoration:none;
+	border: 2px solid white;
+	border-radius: 20px;
+	margin: 20px;
+	background-color: #fa793e;
 	text-align: center;
-	padding: 50px 60px 0px 60px;
-	padding-top:
-	}
-	
-	.contact-bio-story-text {
-	font-size: 20px;
-	}
-	/*
-	#FFBC81
-	white
-	*/
-	
-	.portofolio_page{
-	background-color: #FFBC81;
-	background:url('./image/bg.jpg');
-	background-size: 100% 900px;
-	}
-	
-	.por{
-	display: grid;
-	margin-top:10px;
+	font-size: 15px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.images-page {
 	text-align: center;
-	}
-	
-	.por h1 {
-	color: white;
-	margin-left: -75px;
-	font-size: 30px;
-	}
-	
-	.por h2 {
-	color: white;
-	font-size: 50px;
-	margin-bottom: 35px;
-	}
-	
-	.por span {
-	background-color: red;
-	}
-	
-	.por1{
-	height: 50vh;
-	width:100vw;
-	margin: 0rem;
-	overflow: hidden;
-	padding-left: 75px;
-	margin-bottom: 25px;
-	}
-	
-	.por2{
-	height: 50vh;
-	width:100vw;
-	margin: 0rem;
-	overflow: hidden;
-	padding-left: 75px;
-	margin-bottom: 25px;
-	}
-	
-	.por3{
-	height: 50vh;
-	width:100vw;
-	margin: 0rem;
-	overflow: hidden;
-	padding-left: 75px;
-	margin-bottom: 25px;
-	}
-	
-	.por4{
-	height: 50vh;
-	width: 100vw;
-	margin: 0rem;
-	overflow: hidden;
-	padding-left: 75px;
-	margin-bottom: 25px;
-	}
-	
-	#image-track1 > .imagee, #image-track2 > .imagee, #image-track3 > .imagee, #image-track4 > .imagee {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+.images-page h1 {
+	font-size: 60px;
+	font-weight: normal;
+	line-height: 1.2;
+	padding-top: 30px;
+}
+
+.images-page-photos {
+	padding: 20px;
+}
+
+.image-page-artwork {
+	padding: 20px;
+}
+
+.img-holder {
+	display: flex;
+}
+
+.img-card {
+	display: flex;
+	gap: 15px;
+	transform: translate(0%, 10%);
+}
+
+.img-photos {
 	width: 40vmin;
 	height: 40vmin;
-	object-fit: cover;
+	object-fit: cover;	
 	object-position: 100% 50%;
-	}
-	
-	#image-track1, #image-track2, #image-track3, #image-track4 {
-	display: flex;
-	gap: 4vmin;
-	left: 20%;
-	top: 50%;
-	transform: translate(0%, 10%);
-	user-select: none;
-	}
-	
-	#loading-screen {
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  background-color:red;
-	  text-align: center;
-	}
-	/*
-	#loading-screen p {
-		font-size: 100px;
-		background-color: red;
-	}
+}
 
-	#loading-video {
-	  width: 100%;
-	  height: 100%;
-	  object-fit: cover;
-	}
-	*/
-	
-	
-	
-	
-	
-	
+.hero-content-contact{
+  background-image:url('./images/bg-2.png');
+  background-size:cover;
+  background-position: center;	
+}
+
+.contact-title {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.contact-img-container {
+	margin: 30px;
+	width: 40%;
+	height: auto;
+}
+
+.contact-img {
+	width: 400px;
+	height: auto;
+	float: right;
+	top: -50px;
+}
+
+.contact-info {
+	display: flex;
+	flex-direction: column;	
+	width: 40%;
+	padding: 40px 0px 40px 0px
+}
+
+.contact-sosmed {
+	display: flex;
+	flex-direction: column;
+	margin: 30px;
+	padding-top: 20px;
+	font-size: 25px;
+}
+
+.sosmed-container {
+	display: flex;
+	align-items: center;
+}
+
+.sosmed-container:hover {
+	color: grey;
+}
+
+.logo-sosmed {
+	width: 30px;
+	height: auto;
+	margin-right: 30px;
+}
+
+.contact-text-1 {
+	padding: 0px;
+}
+
+.contact-text-1 p {
+	text-align: center;
+	font-size: 25px;
+	font-weight: lighter;
+}
+
+.contact-text-2 {
+	padding: 20px;
+}
+
+.contact-text-2 p {
+	text-align: center;
+	font-size: 15px;
+	font-weight: lighter;
+}
+
+footer {
+
+}

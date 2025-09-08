@@ -1,127 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-	<link rel="icon" href="./image/logo.png" type="image/x-icon">
-	<script src="js.js" defer></script>
-	<link rel="stylesheet" href="style.css" >
-	
-	<!-- sosmed icon -->
-	<script src="https://kit.fontawesome.com/769402969d.js" crossorigin="anonymous"></script>
-	<!-- animate.style -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome</title>
+  <link rel="stylesheet" href="style.css">
 
-<body>	
-	<header>
-	</header>
-	
-	<section>
-	<div class = "hero">
-		<nav>
-			<div class= "">
-				<a href="index.html" class="logo"></a>
+</head>
+<body>
+
+<div class="bg-container"> 
+
+
+  <header>
+
+	<nav>
+		
+			<button class="menu" onclick="document.getElementById('pop up menu').style.display='block'"> 
+			</button>
+			
+			<div id="pop up menu" class="menu-container">
+				<div class="menu-card menu-animation">
+
+					<div class="menu-item">
+							<a href="index.html"> HOME </a> <br>
+							<a href="portofolio.html"> PORTOFOLIO </a> <br>
+							<a href="images.html"> PICTURES </a> <br>
+							<a href="kontak.html"> CONTACT </a> <br>
+					</div>
+					
+					<button class="menu-close" onclick="document.getElementById('pop up menu').style.display='none'" title="close">
+					</button>
+				</div>
 			</div>
 			
-			<button onclick="document.getElementById('popup').style.display='block'" class="menu"></button>
-				<div id="popup" class="menu-container">
-					<div class="menu-card menu-animation">
-						<div class="center">
-							<div class = "right">
-								<span onclick="document.getElementById('popup').style.display='none'" class="menu_close" title="Close"></span>
-							</div>
-							<div class="menu-item">
-								<div class= "">
-									<a href="index.html">HOME</a><br></br>
-									<a href="portofolio.html">PORTOFOLIO</a><br></br>
-									<a href="contact.html">CONTACT</a><br></br>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-		</nav>
-		<div class = "part1">
-			<div class= "image">
-				<img src="./image/1 (2).png" alt="Gambar Profile" class = "gambar1"> 
-				<img src="./image/1 (2).png" alt="Gambar Profile2" class = "gambar2"> 
-			</div>
-			<div>
-				<div class = "text-warp">
-					<div class="animate__animated animate__bounce " >
-						<h1> <b> CRISDION MAYESA</b> </h1>
-						<div class="intro">
-							<div class = "animate__animated animate__backInDown">
-								<p> Hi there, I <span> design and develop </span> things <p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="CV">
-					<div>
-						<a href = 
-						"https://drive.usercontent.google.com/download?id=1vwVd3eNBmflUr0kEQJbn_WNxahdPYVN2&export=download&authuser=0&confirm=t&uuid=81d84984-83b2-49a6-a125-905cf21a7c86&at=AN8xHooP5UGdremNuM9sa5Rzde6F:1755095388239"   class = ""> Download CV (ATS)</a>
-					</div>
-					<div>
-						<a href = 
-						"https://drive.usercontent.google.com/download?id=1-F47wQp5C5YF1LoM8MIQRskcBTkcbiZB&export=download&authuser=0&confirm=t&uuid=6f97ae48-a195-4cc7-a913-c0cd24f49ec6&at=APZUnTWKDYlsioTV47QM931tBsJx:1697771509765
-						" 
-						   class = ""> Download CV (Creative)</a>
-					</div>
-				</div>
+	</nav>
+  </header>
+
+  <!-- Hero Section  -->
+  <section id="hero" class="hero">
+	  <div class="hero-content">
+		<div class="image-profile">
+			<img src="./images/1 (2).png" alt="Gambar Profile" class = "image-profile-1"> 
+			<img src="./images/1 (2).png" alt="Gambar Profile2" class = "image-profile-2">
+		</div>
+		<div class="text-profile">
+			<h2> Hi, i am </h2>
+			<h1> CRISDION MAYESA </h1>
+			<h2> Software Developer and Designer </h2>
+			<p> Also a photographer, artist, and occasional streamer</p>
+			
+			<div class="profile-button">
+				<a href = ""  class = "CV-1"> Download CV</a>
+				<a href = "" class= "to-Portofolio-button"> To Portfolio </a>
 			</div>
 		</div>
-	</div>
-	</section>
-	<section class= "part3">
-		<div class = "portofolio">
-			<h1> Portofolio </h1>
-			<div class= "preview">
-				<div class= "preview-item">
-					<img src="./image/1.png" alt="Gambar Profile" class = "gambarA">
-					<p> Application </p>
-				</div>
-				<div class= "preview-item">
-					<img src="./image/2.png" alt="Gambar Profile" class = "gambarB">
-					<p> Digital Art </p>
-				</div>
-				<div class= "preview-item">
-					<img src="./image/3.png" alt="Gambar Profile" class = "gambarC">
-					<p> Games </p>
-				</div>
-				<div class = "preview-item">
-					<img src="./image/4.jpg" alt="Gambar Profile" class = "gambarD">
-					<p> Comic </p>
-				</div>
-			</div>
-			<div class= "to-portofolio animate__animated animate__tada ">
-				<a href="portofolio.html" class="">Check Portofolio</a><br></br>
-			</div>
-		</div>
-	</section>
-	<section class = "part4">
-		<div class= "footer_">
-			<footer>
-				<div class = "sosmed">
-					<a href="https://www.twitter.com/" class="fa-brands fa-twitter"></a>
-					<a href="https://www.linkedin.com/" class="fa-brands fa-linkedin"></a>
-					<a href="https://www.facebook.com/" class="fa-brands fa-facebook"></a>
-					<a href="https://www.youtube.com/" class="fa-brands fa-youtube"></a>
-					<a href="https://www.instagram.com/" class="fa-brands fa-instagram"></a>		
-				</div>
-				<div class = "copyright">
-					<p> 2023. Crisdion Mayesa </p>
-				</div>
-			</footer>
-		</div>
-	</section>
-	
-	<footer>
-	
-	</footer>
+	  </div>
+  </section>
+
+</div>
+
+  <!-- Footer -->
+  <footer>
+  </footer>
 </body>
 </html>
-
-
