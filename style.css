@@ -80,7 +80,7 @@ section {
 	display: flex;
 	margin: 15px;
 	cursor: pointer;
-	background: url("./images/menu - Copy.png");
+	background: url("./images/menu.png");
 	background-size: 100% 100%; 
 	border: none;
 }
@@ -400,5 +400,6 @@ section {
 }
 
 footer {
+
 
 }
