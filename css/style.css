@@ -1,0 +1,421 @@
+/* =======================================================
+   RESET & GLOBAL
+======================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #0f172a;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+	overflow: hidden;
+}
+/* =======================================================
+   PAGE TRANSITION
+======================================================= */
+
+.page-wrapper {
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+	transform: translateY(10px);
+}
+
+.page-wrapper.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =======================================================
+   LAYOUT STRUCTURE (GLOBAL)
+======================================================= */
+
+.layout {
+    display: flex;
+}
+
+.content-section {
+    margin-left: 260px;
+    padding: 60px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar.hidden + .content-section {
+    margin-left: 0;
+}
+
+.page-title {
+    color: white;
+    margin-bottom: 40px;
+}
+
+
+/* =======================================================
+   GLOBAL TOGGLE BUTTON
+======================================================= */
+
+.global-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+    background: #111827;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.global-toggle:hover {
+    background: #1f2937;
+}
+
+
+/* =======================================================
+   SIDEBAR
+======================================================= */
+
+.sidebar {
+	position: fixed;
+    top: 0;
+    left: 0;  /* tambahkan ini */
+    height: 100vh;
+    width: 260px;
+    background: #131c2f; /* sedikit lebih terang */
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+    z-index: 1000;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
+    border-right: 1px solid #1f2937; /* subtle divider */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    font-size: 12px;
+    color: #64748b;
+    text-align: center;
+}
+
+
+/* =======================================================
+   SIDEBAR PROFILE SECTION
+======================================================= */
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* =======================================================
+   SIDEBAR INTRO TEXT
+======================================================= */
+
+.intro-text {
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.intro-text p {
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* =======================================================
+   SIDEBAR SOCIAL ICONS
+======================================================= */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.social-icons a {
+    color: #94a3b8;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #2563eb;
+}
+
+
+/* =======================================================
+   SIDEBAR NAVIGATION
+======================================================= */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: #cbd5e1;
+    padding: 12px 0;
+    text-align: center;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+.sidebar nav a:hover {
+    background: #1f2937;
+    border-color: #2563eb;
+    color: white;
+}
+
+/* =======================================================
+   INDEX PAGE (HERO)
+======================================================= */
+
+.hero-section {
+    margin-left: 260px;
+    flex: 1;
+    min-height: 100vh;
+    background: url('../assets/cover.JPG') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.hidden + .hero-section {
+    margin-left: 0;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-content h2 {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+
+/* =======================================================
+   IMAGES PAGE (MASONRY)
+======================================================= */
+
+.masonry {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.masonry-item {
+    margin-bottom: 20px;
+    break-inside: avoid;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.masonry-item img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    transition: 0.4s ease;
+}
+
+.masonry-item img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 1100px) {
+    .masonry {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 700px) {
+    .masonry {
+        column-count: 1;
+    }
+}
+
+
+/* =======================================================
+   PORTFOLIO PAGE
+======================================================= */
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-card {
+    display: flex;
+    background: #111827;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-image {
+    width: 280px;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+    flex: 1;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.project-info p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 15px;
+}
+
+.project-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #2563eb;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.project-btn:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 900px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+
+/* =======================================================
+   ABOUT PAGE
+======================================================= */
+
+.about-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.about-photo img {
+    width: 300px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+    background: #111827;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #1f2937;
+    line-height: 1.8;
+    color: #e5e7eb;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #cbd5e1;
+}
+
+.about-highlights {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #1f2937;
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-photo img {
+        width: 100%;
+        max-width: 350px;
+    }
+}
