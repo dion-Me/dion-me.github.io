@@ -343,7 +343,8 @@ body {
     margin-bottom: 15px;
 }
 
-.project-btn {
+.project-btn {	
+	margin-bottom:5px;
     display: inline-block;
     text-decoration: none;
     color: white;
@@ -359,11 +360,12 @@ body {
 }
 
 .play-btn{
+	margin-bottom:5px;
     display: inline-block;
     text-decoration: none;
     color: white;
     background: #e06d1b;
-    padding: 8px 35px;
+    padding: 8px 30px;
     border-radius: 6px;
     font-size: 13px;
     transition: 0.3s ease;
