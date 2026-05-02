@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Viewer</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #0f172a;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <img id="previewImage" src="">
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const img = params.get("img");
+
+    if (img) {
+      document.getElementById("previewImage").src =
+        "assets/images/product/" + img;
+    }
+  </script>
+
+</body>
+</html>

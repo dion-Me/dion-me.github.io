@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Photos</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .finder-container {
+        text-align: center;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+
+    .finder-box {
+        display: flex;
+        gap: 10px;
+    }
+
+    .finder-box input {
+        flex: 1;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #1f2937;
+        background: #111827;
+        color: white;
+        outline: none;
+    }
+
+    .finder-box button {
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: none;
+        background: #3b82f6;
+        color: white;
+        cursor: pointer;
+    }
+
+    .finder-box button:hover {
+        background: #2563eb;
+    }
+	
+	.back-btn {
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: #1f2937;
+    color: white;
+	font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	}
+
+	.back-btn:hover {
+		background: #374151;
+	}
+	
+	#downloadBtn {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 12px 20px;
+
+		border-radius: 8px;
+		border: none;
+
+		background: #d9782e;
+		color: white;
+		font-size: 14px;
+
+		cursor: pointer;
+		transition: 0.25s ease;
+
+		display: inline-block;
+	}	
+	
+	#downloadBtn[style*="display: none"] {
+		opacity: 0;
+	}
+
+    .result {
+        margin-top: 30px;
+    }
+
+    .result img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="finder-container">
+    <h1>Find Your Photos</h1>
+
+    <div class="finder-box">
+        <input type="text" id="searchInput" placeholder="Enter your code...">
+        <button onclick="searchImages()">Find</button>
+		<a href="index.html" class="back-btn">Home</a>
+    </div>
+	
+	<button id="downloadBtn" style="display:none; margin-top:20px;">
+		Download All
+	</button>
+
+
+    <div id="result" class="result"></div>
+</div>
+
+<script>
+let currentImages = [];
+const imageDatabase = {
+    "TEST-01": [
+        "assets/finder/TEST_CSPY (1).jpg",
+        "assets/finder/TEST_CSPY (2).jpg",
+        "assets/finder/TEST_CSPY (3).jpg",
+        "assets/finder/TEST_CSPY (1).png",
+        "assets/finder/TEST_CSPY (2).png"
+    ],
+    "TEST-02": [
+        "assets/finder/TEST_IDOL (1).JPG",
+        "assets/finder/TEST_IDOL (2).JPG",
+        "assets/finder/TEST_IDOL (3).JPG"
+    ],
+    "TEST-03": [
+        "assets/finder/TEST-BG (1).JPG",
+        "assets/finder/TEST-BG (2).JPG",
+        "assets/finder/TEST-BG (3).JPG"
+    ],
+    "TEST-04": [
+        "assets/finder/TEST-KRBT.JPG"
+    ]
+};
+
+function searchImages() {
+    const input = document.getElementById("searchInput").value.trim().toUpperCase();
+    const result = document.getElementById("result");
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    result.innerHTML = "";
+    downloadBtn.style.display = "none";
+    currentImages = [];
+
+    if (imageDatabase[input]) {
+        currentImages = imageDatabase[input];
+
+        imageDatabase[input].forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            result.appendChild(img);
+        });
+
+        downloadBtn.style.display = "inline-block";
+    } else {
+        result.innerHTML = "<p>No images found</p>";
+    }
+}
+
+// Enter key support
+document.getElementById("searchInput").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        searchImages();
+    }
+});
+
+//download all
+document.getElementById("downloadBtn").addEventListener("click", async () => {
+    const zip = new JSZip();
+
+    for (let i = 0; i < currentImages.length; i++) {
+        const url = currentImages[i];
+        const response = await fetch(url);
+        const blob = await response.blob();
+
+        const filename = url.split("/").pop();
+        zip.file(filename, blob);
+    }
+
+    const content = await zip.generateAsync({ type: "blob" });
+
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(content);
+    a.download = "photos.zip";
+    a.click();
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">
+</body>
+</html>

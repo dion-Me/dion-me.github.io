@@ -95,3 +95,9 @@ document.querySelectorAll("a").forEach(link => {
     }
 });
 
+window.addEventListener("pageshow", function (event) {
+    if (event.persisted) {
+        // halaman dari cache → paksa reload
+        window.location.reload();
+    }
+});

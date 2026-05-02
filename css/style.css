@@ -45,6 +45,7 @@ body {
     margin-left: 260px;
     padding: 60px;
     height: 100vh;
+	width: 100%;
     overflow-y: auto;
 }
 
@@ -91,6 +92,7 @@ body {
     top: 0;
     left: 0;  /* tambahkan ini */
     height: 100vh;
+	overflow-y: auto;
     width: 260px;
     background: #131c2f; /* sedikit lebih terang */
     color: white;
@@ -104,6 +106,13 @@ body {
     z-index: 1000;
     box-shadow: 2px 0 15px rgba(0, 0, 0, 0.4);
     border-right: 1px solid #1f2937; /* subtle divider */
+	
+	scrollbar-width: none; /* hide scrollbar - Firefox */
+	-ms-overflow-style: none; /* hide scrollbar - IE & Edge lama */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* hide scroll bar Chrome, Safari */
 }
 
 .sidebar.hidden {
@@ -115,6 +124,7 @@ body {
     font-size: 12px;
     color: #64748b;
     text-align: center;
+	padding-top: 30px;
 }
 
 
@@ -145,8 +155,10 @@ body {
 ======================================================= */
 
 .intro-text {
-    margin-top: 15px;
-    padding: 0 10px;
+    margin-top: 5px;
+	max-height: 60px;
+	min-height: 60px;
+	overflow: hidden;
 }
 
 .intro-text p {
@@ -390,7 +402,6 @@ body {
 /* =======================================================
    ABOUT PAGE
 ======================================================= */
-
 .about-container {
     display: flex;
     gap: 50px;
@@ -401,6 +412,7 @@ body {
     width: 300px;
     border-radius: 16px;
     object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .about-text {
@@ -409,6 +421,7 @@ body {
     padding: 40px;
     border-radius: 16px;
     border: 1px solid #1f2937;
+
     line-height: 1.8;
     color: #e5e7eb;
 }
@@ -416,12 +429,19 @@ body {
 .about-text p {
     margin-bottom: 20px;
     color: #cbd5e1;
+    font-size: 14px;
+}
+
+.about-text p:last-child {
+    margin-top: 20px;
+    color: #93c5fd;
 }
 
 .about-highlights {
     margin-top: 20px;
     padding-top: 20px;
     border-top: 1px solid #1f2937;
+
     color: #94a3b8;
     font-size: 14px;
 }
@@ -436,3 +456,119 @@ body {
         max-width: 350px;
     }
 }
+
+/* =======================================================
+   PRODUCT PAGE
+======================================================= */
+
+.product-section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+	flex-direction: column;
+
+    padding: 20px;
+    background: #131c2f;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.grid-label {
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.grid-label h3 {
+    font-size: 16px;
+    color: #e5e7eb;
+}
+
+.grid-label p {
+    font-size: 14px;
+    color: #e5e7eb;
+	padding-top: 5px;
+}
+
+.grid-product {
+    display: flex;
+    gap: 20px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+}
+
+.product-card {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #1b263d;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.product-card img {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* 🔥 isi sisa space */
+    
+    padding: 12px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #f1f5f9;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-info p {
+    font-size: 12px;
+    color: #94a3b8;
+	
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* max 3 baris */
+    -webkit-box-orient: vertical;
+
+    overflow: hidden;
+	margin: 5px;
+}
+
+.btn {
+	margin-top: 5px;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 12px;
+    border-radius: 8px;
+    background: #3b82f6;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.product-info .btn {
+    margin-top: auto; /* 🔥 dorong ke bawah */
+}
+
